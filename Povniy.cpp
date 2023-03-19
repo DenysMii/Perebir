@@ -14,13 +14,13 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	cout << "Ê³ëüê³ñòü ðÿäê³â: ";
+	cout << "ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ñ€ÑÐ´ÐºÑ–Ð²: ";
 	cin >> height;
-	cout << "Ê³ëüê³ñòü ñòîâïö³â: ";
+	cout << "ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÑÑ‚Ð¾Ð²Ð¿Ñ†Ñ–Ð²: ";
 	cin >> width;  
 	
 	minL = height;
-	cout << "Ââåä³òü òàáëèöþ ïîêðèòò³â:" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‚Ð°Ð±Ð»Ð¸Ñ†ÑŽ Ð¿Ð¾ÐºÑ€Ð¸Ñ‚Ñ‚Ñ–Ð²:" << endl;
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
@@ -67,7 +67,7 @@ void isCoverage(bool P[])
 	}
 	if (check)
 	{
-		printf(" - íå º ïîêðèòòÿì: â³äñóòí³ÿ îäèíèöÿ â %d ñòîâï÷èêó \n", check);
+		printf(" - Ð½Ðµ Ñ” Ð¿Ð¾ÐºÑ€Ð¸Ñ‚Ñ‚ÑÐ¼: Ð²Ñ–Ð´ÑÑƒÑ‚Ð½Ñ–Ñ Ð¾Ð´Ð¸Ð½Ð¸Ñ†Ñ Ð² %d ÑÑ‚Ð¾Ð²Ð¿Ñ‡Ð¸ÐºÑƒ \n", check);
 	}
 	else
 	{
@@ -80,7 +80,7 @@ void isCoverage(bool P[])
 			}
 		}
 		minValues(l, S);
-		printf(" - ïîêðèòòÿ ( l = %d, S = %d) \n", l, S);
+		printf(" - Ð¿Ð¾ÐºÑ€Ð¸Ñ‚Ñ‚Ñ ( l = %d, S = %d) \n", l, S);
 		
 	}
 	
