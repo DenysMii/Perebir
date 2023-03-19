@@ -49,6 +49,23 @@ void minValues(int l, int S)
 		minS_P = k;
 	}
 }
+bool isExcess(bool P[], int g)
+{
+	bool check;
+	for (int i = 0; i < width - 1; i++)
+	{
+		check = 1;
+		for(int j = 0; j < height; j++)
+		{
+			if (P[j] && A[j][i] && j != g)
+			{
+				check = 0;
+			}
+		}
+		if (check) break;
+	}
+	return !check;
+}
 bool isCoverage(bool P[])
 {
 	int l = 0, S = 0;
@@ -67,21 +84,17 @@ bool isCoverage(bool P[])
 	}
 	if (check)
 	{
-		printf(" - не є покриттям: відсутня одиниця в %d стовпчику \n", check);
 		return false;
 	}
 	else
 	{
 		for(int i = 0; i < height; i++)
 		{
-			if (P[i])
+			if (P[i] && isExcess(P, i))
 			{
-				l++;
-				S += A[i][width - 1];
+				return false;
 			}
 		}
-		minValues(l, S);
-		printf(" - покриття ( l = %d, S = %d) \n", l, S);
 		return true;
 	}
 	
@@ -89,14 +102,20 @@ bool isCoverage(bool P[])
 
 void outputVariation(bool P[])
 {
+	int l, S;
 	cout << 'P' << k << " = { ";
 	for (int i = 0; i < height; i++)
 	{
 		if (P[i])
+		{
 			cout << 'A' << i + 1 << ' ';
+			l++;
+			S += A[i][width - 1];
+		}
 	}
 	cout << '}';
-	
+	printf(" - покриття ( l = %d, S = %d) \n", l, S);
+	minValues(l, S);
 }
 
 void allVariations(int i, bool P[])
@@ -104,12 +123,14 @@ void allVariations(int i, bool P[])
 	for (i; i < height; i++)
 	{
 		P[i] = 1;
-		k++;
-		outputVariation(P);
-		if(!isCoverage(P))
+		if(isCoverage(P))
 		{
+			k++;
+			outputVariation(P);
+		}else{
 			allVariations(i + 1, P);
 		}
+		
 		P[i] = 0;
 	}
 }
