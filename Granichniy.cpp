@@ -14,13 +14,13 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	cout << "Кількість рядків: ";
+	cout << "Ê³ëüê³ñòü ðÿäê³â: ";
 	cin >> height;
-	cout << "Кількість стовпців: ";
+	cout << "Ê³ëüê³ñòü ñòîâïö³â: ";
 	cin >> width;  
 	
 	minL = height;
-	cout << "Введіть таблицю покриттів:" << endl;
+	cout << "Ââåä³òü òàáëèöþ ïîêðèòò³â:" << endl;
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
@@ -68,11 +68,10 @@ bool isExcess(bool P[], int g)
 }
 bool isCoverage(bool P[])
 {
-	int l = 0, S = 0;
-	int check;
+	bool check;
 	for (int i = 0; i < width - 1; i++)
 	{
-		check = i + 1;
+		check = 1;
 		for(int j = 0; j < height; j++)
 		{
 			if (P[j] && A[j][i])
@@ -102,7 +101,7 @@ bool isCoverage(bool P[])
 
 void outputVariation(bool P[])
 {
-	int l, S;
+	int l = 0, S = 0;
 	cout << 'P' << k << " = { ";
 	for (int i = 0; i < height; i++)
 	{
@@ -114,7 +113,7 @@ void outputVariation(bool P[])
 		}
 	}
 	cout << '}';
-	printf(" - покриття ( l = %d, S = %d) \n", l, S);
+	printf(" - ïîêðèòòÿ ( l = %d, S = %d) \n", l, S);
 	minValues(l, S);
 }
 
