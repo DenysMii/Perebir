@@ -67,7 +67,7 @@ bool isCoverage(bool P[])
 	}
 	if (check)
 	{
-		printf(" - не є покриттям: відсутнія одиниця в %d стовпчику \n", check);
+		printf(" - не є покриттям: відсутня одиниця в %d стовпчику \n", check);
 		return false;
 	}
 	else
