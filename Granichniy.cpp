@@ -14,13 +14,13 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	cout << "Ê³ëüê³ñòü ðÿäê³â: ";
+	cout << "Кількість рядків: ";
 	cin >> height;
-	cout << "Ê³ëüê³ñòü ñòîâïö³â: ";
+	cout << "Кількість стовпців: ";
 	cin >> width;  
 	
 	minL = height;
-	cout << "Ââåä³òü òàáëèöþ ïîêðèòò³â:" << endl;
+	cout << "Введіть таблицю покриттів:" << endl;
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
@@ -113,7 +113,7 @@ void outputVariation(bool P[])
 		}
 	}
 	cout << '}';
-	printf(" - ïîêðèòòÿ ( l = %d, S = %d) \n", l, S);
+	printf(" - покриття ( l = %d, S = %d) \n", l, S);
 	minValues(l, S);
 }
 
