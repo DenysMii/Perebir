@@ -127,7 +127,9 @@ void allVariations(int i, bool P[])
 		{
 			k++;
 			outputVariation(P);
-		}else{
+		}
+		else
+		{
 			allVariations(i + 1, P);
 		}
 		
